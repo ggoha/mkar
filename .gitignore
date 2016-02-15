@@ -3,7 +3,6 @@ capybara-*.html
 .rspec
 /log
 /tmp
-/config/database.yml # доступ к базе данным
 /Procfile # про него я еще расскажу
 /public/system
 /coverage/
@@ -14,6 +13,7 @@ rerun.txt
 pickle-email-*.html
 
 # TODO Comment out these rules if you are OK with secrets being uploaded to the repo
+/config/database.yml # доступ к базе данным
 config/initializers/secret_token.rb
 config/secrets.yml
 /config/deploy/ # файлы Capistrano
@@ -21,6 +21,9 @@ config/secrets.yml
 ## Environment normalization:
 /.bundle
 /vendor/bundle
+
+#
+/config/provision/keys
 
 # these should all be checked in to normalize the environment:
 # Gemfile.lock, .ruby-version, .ruby-gemset

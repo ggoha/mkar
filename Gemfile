@@ -29,17 +29,25 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #Use Unicorn as the app server
 gem 'unicorn'
 
-# Use Capistrano for deployment
 group :development do
-  gem 'capistrano'
+  # Гем, который добавляет специфические для Rails таски, такие как прогон миграций и компиляция ассетов
   gem 'capistrano-rails'
+  # Гем, добавляющий возможности bundle к capistrano
   gem 'capistrano-bundler'
-  gem 'capistrano-rvm'
+  # Добавление поддержки Rbenv (менеджера версий для Ruby)
+  gem 'capistrano-rbenv'
+  # Интеграция пумы и капистрано
+  gem 'capistrano3-puma'
+end
+
+group :production do 
+  # Puma - это Ruby/Rack сервер, который будет получать запросы из Nginx и направлять их в Rails, эдакое связующее звено
+  gem 'puma'
 end
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'pry', '~> 0.9'
+  gem 'pry-nav', '~> 0.2'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

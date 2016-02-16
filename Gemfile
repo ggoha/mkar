@@ -38,6 +38,8 @@ group :development do
   gem 'capistrano-rbenv'
   # Интеграция пумы и капистрано
   gem 'capistrano3-puma'
+  #secret-key
+  gem 'capistrano-secrets-yml'
 end
 
 group :production do 
